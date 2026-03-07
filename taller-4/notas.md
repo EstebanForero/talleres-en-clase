@@ -1,4 +1,4 @@
-# 🗒️ Registro de Trabajo en Clase - Taller X
+# 🗒️ Registro de Trabajo en Clase - Taller 4
 
 ## 📆 Fecha de la sesión
 07/03/2026
@@ -22,8 +22,10 @@ Describa brevemente qué se hizo durante la sesión:
   - Incorporar monitoreo centralizado con métricas, logs, trazas y alertas.
 - ¿Qué herramientas se usaron (papel, pizarra, draw.io, Astah)?
   - Se realizó el análisis preliminar en clase con esquema conceptual para luego pasarlo a herramienta visual.
+  - El diagrama se realizo con Eraser IO para modelar la arquitectura que se dejo por escrito
 - ¿Qué parte del trabajo se alcanzó a desarrollar?
   - Se completó la descripción del mapa preliminar de infraestructura.
+  - Se completo el mapa de la infra estructura
   - Se listaron zonas sensibles de carga, disponibilidad, monitoreo y redundancia.
   - Se documentaron problemas probables y acciones de mitigación para socializar con el docente.
 
@@ -48,6 +50,7 @@ Descripción del mapa preliminar:
 Zonas críticas diagnosticadas:
 - Latencia en rastreo en tiempo real por alta frecuencia de eventos.
 - Riesgo de puntos únicos de falla en gateway o componentes centrales como el load balancers
+- A la hora de escalar horizontalmente entre zonas es importante tener en cuenta la replicacion y sincronizacion de las bases de datos
 - La dependencia de provedores en la nube como AWS, CLOUDFLARE, o GOOGLE para proveer, el CDN
 
 ## 🔁 Tareas definidas para complementar el taller
@@ -63,4 +66,4 @@ Anote las responsabilidades acordadas entre los miembros del equipo para complet
 
 ---
 
-_Este documento resume el trabajo colaborativo realizado durante la sesión del taller X en el curso AREM - Universidad de La Sabana._
+_Este documento resume el trabajo colaborativo realizado durante la sesión del taller 4 en el curso AREM - Universidad de La Sabana._
