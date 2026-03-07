@@ -42,10 +42,13 @@ Descripción del mapa preliminar:
 5. Persistencia en `base de datos distribuida` (replicación multi-región) + `cache distribuido`.
 6. Capa de `monitoreo y alertas` para observabilidad y respuesta a incidentes.
 
+<img width="1229" height="944" alt="image" src="https://github.com/user-attachments/assets/b32374eb-3495-4def-bda1-c40466242824" />
+
+
 Zonas críticas diagnosticadas:
-- Latencia en rastreo en tiempo real por alta frecuencia de lectura/escritura.
-- Riesgo de puntos únicos de falla en gateway o componentes centrales.
-- Escalabilidad horizontal limitada por zona geográfica en picos de demanda.
+- Latencia en rastreo en tiempo real por alta frecuencia de eventos.
+- Riesgo de puntos únicos de falla en gateway o componentes centrales como el load balancers
+- La dependencia de provedores en la nube como AWS, CLOUDFLARE, o GOOGLE para proveer, el CDN
 
 ## 🔁 Tareas definidas para complementar el taller
 
