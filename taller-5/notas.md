@@ -47,6 +47,8 @@ Este flujo se tomó como base para el análisis STRIDE porque cualquier falla en
 
 ## 🛡️ Tabla STRIDE utilizada
 
+En el documento de excel stride_analisis.xlsx tambien se puede encontrar la tabla
+
 | ID | Componente / Activo | Tipo STRIDE | Descripción de la Amenaza | Escenario de Ataque | Impacto | Probabilidad | Nivel de Riesgo | Controles de Seguridad Existentes | Mitigación Recomendada | Responsable | Estado |
 |----|----------------------|-------------|----------------------------|---------------------|---------|--------------|------------------|-----------------------------------|------------------------|-------------|--------|
 | T1 | Autenticación del estudiante y sesión de compra | Spoofing | Un atacante suplanta la identidad de un estudiante para comprar o activar una suscripción ajena | Uso de credenciales robadas o reutilizadas para iniciar sesión y completar el flujo de pago | Acceso no autorizado a cursos, certificados y datos personales | Alta | Alto | Inicio de sesión con usuario y contraseña, cifrado TLS | Implementar MFA, detección de inicios de sesión anómalos y políticas de contraseñas robustas | Equipo de Seguridad | Pendiente |
