@@ -1,36 +1,102 @@
-# 🗒️ Registro de Trabajo en Clase - Taller X
+# Registro de Trabajo en Clase - Taller 7
 
-## 📆 Fecha de la sesión
-_Indique la fecha de la clase en que se trabajó este taller._
+## Fecha de la sesion
 
-## 👥 Integrantes presentes
-- Nombre 1
-- Nombre 2
-- Nombre 3
+Mayo de 2026
 
-## 🧠 Actividades realizadas en clase
+## Integrantes presentes
 
-Describa brevemente qué se hizo durante la sesión:
+- Carlos David Cruz Pavas
+- Juan Felipe Cepeda Uribe
+- Esteban Fernando Forero Montejo
 
-- ¿Qué se discutió con el equipo?
-- ¿Qué decisiones de modelado se tomaron?
-- ¿Qué herramientas se usaron (papel, pizarra, draw.io, Astah)?
-- ¿Qué parte del trabajo se alcanzó a desarrollar?
+## Caso base trabajado
 
-## 🧩 Boceto inicial del modelo
+El caso base fue **FarmApp**, una cadena de farmacias con canales fisicos y e-commerce. El objetivo fue integrar vistas de negocio, informacion, aplicaciones, infraestructura y seguridad en una sola narrativa arquitectonica.
 
-> (Puede insertar aquí una imagen del boceto, una captura de pantalla o un diagrama preliminar si ya fue hecho en digital)
+## Actividades realizadas en clase
 
-## 🔁 Tareas definidas para complementar el taller
+- Se identificaron las capas principales del caso FarmApp.
+- Se relaciono el proceso de compra online con aplicaciones internas como POS, CRM, inventario y logistica.
+- Se discutio como los datos de Producto, Cliente, Pedido, Descuento e Inventario conectan los procesos de negocio con las aplicaciones.
+- Se ubicaron componentes de infraestructura como nube hibrida, servidores regionales y base de datos replicada.
+- Se agregaron controles de seguridad: roles, cifrado, monitoreo de fraude y control de acceso a datos personales.
 
-Anote las responsabilidades acordadas entre los miembros del equipo para completar la entrega final:
+## Vista integrada preliminar
 
-| Tarea asignada | Responsable | Fecha estimada |
-|----------------|-------------|----------------|
-| Modelado final en draw.io | Nombre 1 | 10/08 |
-| Redacción del informe     | Nombre 2 | 11/08 |
-| Investigación y referencias | Nombre 3 | 12/08 |
+```mermaid
+flowchart LR
+  subgraph N[Negocio]
+    Buy[Compra online]
+    Prescription[Validacion de prescripcion]
+    Dispatch[Despacho y entrega]
+  end
 
----
+  subgraph I[Informacion]
+    Product[Producto]
+    Customer[Cliente]
+    Order[Pedido]
+    Inventory[Inventario]
+    Discount[Descuento]
+  end
 
-_Este documento resume el trabajo colaborativo realizado durante la sesión del taller X en el curso AREM - Universidad de La Sabana._
+  subgraph A[Aplicaciones]
+    Mobile[App movil / Web]
+    Ecommerce[Plataforma e-commerce]
+    POS[Sistema POS]
+    CRM[CRM]
+    Logistics[Logistica]
+  end
+
+  subgraph T[Infraestructura]
+    Cloud[Nube hibrida]
+    Regional[Servidores regionales]
+    DB[(Base replicada)]
+  end
+
+  subgraph S[Seguridad]
+    Roles[Roles]
+    Encryption[Cifrado]
+    Fraud[Monitoreo fraude]
+  end
+
+  Buy --> Order
+  Prescription --> Order
+  Dispatch --> Logistics
+  Product --> Inventory
+  Customer --> CRM
+  Order --> Ecommerce
+  Mobile --> Ecommerce
+  Ecommerce --> POS
+  Ecommerce --> Logistics
+  Ecommerce --> DB
+  POS --> DB
+  CRM --> DB
+  Logistics --> Regional
+  DB --> Cloud
+  Roles --> Mobile
+  Encryption --> DB
+  Fraud --> Ecommerce
+```
+
+## Decisiones de modelado
+
+| Decision | Justificacion |
+|----------|---------------|
+| Separar vistas por capa | Facilita ver como negocio, datos, aplicaciones, infraestructura y seguridad se soportan entre si |
+| Conectar negocio con datos | Permite explicar por que entidades como Pedido e Inventario son criticas |
+| Mostrar aplicaciones operativas | POS, CRM y logistica explican la continuidad entre canal digital y tiendas fisicas |
+| Incluir seguridad transversal | FarmApp maneja clientes, pagos y medicamentos, por lo que seguridad no puede quedar aislada |
+
+## Tareas definidas
+
+| Tarea asignada | Responsable | Resultado |
+|----------------|-------------|-----------|
+| Adaptar la estructura de vistas al cliente real | Todo el equipo | Usar CNA, banco de preguntas, app, Turso/OneDrive y proveedor |
+| Redactar informe narrativo | Todo el equipo | `talleres-empresa/taller-7/informe.md` |
+| Consolidar diagrama del cliente | Todo el equipo | `talleres-empresa/taller-7/tablero-integrado-cliente.mmd` |
+| Revisar referencias de documentacion arquitectonica | Todo el equipo | `talleres-empresa/taller-7/referencias.md` |
+
+## Conclusiones de clase
+
+El ejercicio mostro que una arquitectura integrada no debe presentar diagramas aislados. La vista de negocio explica el objetivo, la informacion estructura lo que se gestiona, las aplicaciones ejecutan el flujo, la infraestructura lo soporta y la seguridad gobierna los riesgos transversales.
